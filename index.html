@@ -34,16 +34,40 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
+            <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
             <div class="logo">
-                <img src="images/Untitled design.png" alt="">
+                <img src="images/kairon-logo-final.png" alt="">
             </div>
             <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Products <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li><a href="#" class="active" id="home">Home</a></li>
+                <li><a href="#" id="about">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#" id="product">Products <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Green Cardamom</a></li>
+                        <li><a href="#">Clove</a></li>
+                        <li><a href="#">Cinnamon</a></li>
+                        <li><a href="#">Bay Leaf</a></li>
+                        <li><a href="#">Star Anise</a></li>
+                        <li><a href="#">Nutmeg</a></li>
+                        <li><a href="#">Mace</a></li>
+                        <li><a href="#">Turmeric</a></li>
+                        <li><a href="#">Ginger</a></li>
+                        <li><a href="#">Coriander</a></li>
+                        <li><a href="#">Cumin</a></li>
+                        <li><a href="#">Fennel</a></li>
+                        <li><a href="#">Mustard Seeds</a></li>
+                        <li><a href="#">Fenugreek</a></li>
+                        <li><a href="#">Red Chili</a></li>
+                        <li><a href="#">White Pepper</a></li>
+                        <li><a href="#">Saffron</a></li>
+                        <li><a href="#">Tamarind</a></li>
+                        <li><a href="#">Curry Leaves</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Spices List</a></li>
                 <li><a href="#">Quality</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#" id="contact">Contact Us</a></li>
             </ul>
             <a href="#" class="btn btn-primary">Get A Quote</a>
         </div>
@@ -53,7 +77,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Pure Spices.<br>Pure Goodness.</h2>
+                <h2>Pure Spices <br>Pure Goodness.</h2>
                 <p>Kairon Spices brings you the finest quality spices<br>sourced from the best farms around the world.
                 </p>
                 <div class="hero-buttons">
@@ -61,11 +85,6 @@
                     <a href="#" class="btn btn-outline">Contact Us</a>
                 </div>
             </div>
-        </div>
-        <div class="hero-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
         </div>
     </section>
 
@@ -137,36 +156,134 @@
                 <div class="product-card">
                     <img src="images/pepper.jpg" alt="Black Pepper">
                     <h4>Black Pepper</h4>
-                    <a href="#" class="btn btn-dark">View Details</a>
+                    <a href="#" class="btn btn-dark" onclick="toggleDesc(this); return false;">View Details</a>
+                    <div class="product-desc" style="display: none;">
+                        <ul style="padding-left: 20px; margin-top: 5px; list-style-type: disc;">
+                            <li style="margin-bottom: 5px;">Premium-grade handpicked peppercorns</li>
+                            <li style="margin-bottom: 5px;">Rich, bold aroma with intense flavor</li>
+                            <li style="margin-bottom: 5px;">Naturally sun-dried for superior quality</li>
+                            <li style="margin-bottom: 5px;">High piperine content for strong pungency</li>
+                            <li style="margin-bottom: 5px;">100% pure and chemical-free</li>
+                            <li style="margin-bottom: 5px;">Enhances taste in a variety of dishes</li>
+                            <li style="margin-bottom: 5px;">Supports digestion and nutrient absorption</li>
+                            <li style="margin-bottom: 5px;">Packed with antioxidants and natural compounds</li>
+                            <li style="margin-bottom: 5px;">Ideal for culinary, medicinal, and preservative uses</li>
+                            <li style="margin-bottom: 5px;">Sustainably sourced from trusted farms</li>
+                            <li style="margin-bottom: 5px;">Available in whole, crushed, and powdered forms</li>
+                            <li style="margin-bottom: 5px;">Export-quality spice with global demand</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="product-card">
                     <img src="images/cardamom.jpg" alt="Green Cardamom">
                     <h4>Green Cardamom</h4>
-                    <a href="#" class="btn btn-dark">View Details</a>
+                    <a href="#" class="btn btn-dark" onclick="toggleDesc(this); return false;">View Details</a>
+                    <div class="product-desc" style="display: none;">
+                        <ul style="padding-left: 20px; margin-top: 5px; list-style-type: disc;">
+                            <li style="margin-bottom: 5px;">Queen of Spices</li>
+                            <li style="margin-bottom: 5px;">Premium handpicked green pods</li>
+                            <li style="margin-bottom: 5px;">Rich, sweet aroma with refreshing flavor</li>
+                            <li style="margin-bottom: 5px;">Naturally cultivated in fertile tropical climates</li>
+                            <li style="margin-bottom: 5px;">Superior essential oil content</li>
+                            <li style="margin-bottom: 5px;">100% pure, fresh, and chemical-free</li>
+                            <li style="margin-bottom: 5px;">Ideal for teas, desserts, curries, and spice blends</li>
+                            <li style="margin-bottom: 5px;">Supports digestion and freshens breath</li>
+                            <li style="margin-bottom: 5px;">Packed with antioxidants and wellness benefits</li>
+                            <li style="margin-bottom: 5px;">Carefully dried to preserve vibrant color and flavor</li>
+                            <li style="margin-bottom: 5px;">Export-quality spice with global demand</li>
+                            <li style="margin-bottom: 5px;">Sustainably sourced from trusted plantations</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="product-card">
                     <img src="images/clove.jpg" alt="Cloves">
                     <h4>Cloves</h4>
-                    <a href="#" class="btn btn-dark">View Details</a>
+                    <a href="#" class="btn btn-dark" onclick="toggleDesc(this); return false;">View Details</a>
+                    <div class="product-desc" style="display: none;">
+                        <ul style="padding-left: 20px; margin-top: 5px; list-style-type: disc;">
+                            <li style="margin-bottom: 5px;">King of Aromatic Spices</li>
+                            <li style="margin-bottom: 5px;">Premium handpicked dried flower buds</li>
+                            <li style="margin-bottom: 5px;">Strong, warm aroma with intense flavor</li>
+                            <li style="margin-bottom: 5px;">Naturally grown in tropical climates</li>
+                            <li style="margin-bottom: 5px;">Rich in essential oils and natural compounds</li>
+                            <li style="margin-bottom: 5px;">100% pure, fresh, and chemical-free</li>
+                            <li style="margin-bottom: 5px;">Ideal for cooking, baking, teas, and medicinal uses</li>
+                            <li style="margin-bottom: 5px;">Supports oral health and digestion</li>
+                            <li style="margin-bottom: 5px;">Packed with antioxidants and antibacterial properties</li>
+                            <li style="margin-bottom: 5px;">Carefully dried to preserve potency and freshness</li>
+                            <li style="margin-bottom: 5px;">Export-quality spice with high global value</li>
+                            <li style="margin-bottom: 5px;">Sustainably sourced from trusted farms</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="product-card">
                     <img src="images/cinnamon.jpg" alt="Cinnamon">
                     <h4>Cinnamon</h4>
-                    <a href="#" class="btn btn-dark">View Details</a>
+                    <a href="#" class="btn btn-dark" onclick="toggleDesc(this); return false;">View Details</a>
+                    <div class="product-desc" style="display: none;">
+                        <ul style="padding-left: 20px; margin-top: 5px; list-style-type: disc;">
+                            <li style="margin-bottom: 5px;">Premium aromatic bark spice</li>
+                            <li style="margin-bottom: 5px;">Sweet, warm flavor with rich fragrance</li>
+                            <li style="margin-bottom: 5px;">Naturally harvested from high-quality cinnamon trees</li>
+                            <li style="margin-bottom: 5px;">Rich in essential oils and natural goodness</li>
+                            <li style="margin-bottom: 5px;">100% pure, fresh, and chemical-free</li>
+                            <li style="margin-bottom: 5px;">Ideal for desserts, beverages, curries, and wellness uses
+                            </li>
+                            <li style="margin-bottom: 5px;">Supports digestion and overall health</li>
+                            <li style="margin-bottom: 5px;">Packed with antioxidants and medicinal properties</li>
+                            <li style="margin-bottom: 5px;">Carefully processed to preserve flavor and quality</li>
+                            <li style="margin-bottom: 5px;">Export-quality spice with global demand</li>
+                            <li style="margin-bottom: 5px;">Sustainably sourced from trusted plantations</li>
+                            <li style="margin-bottom: 5px;">A timeless spice valued for taste and wellness</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="product-card">
-                    <img src="images/bayleaf.jpg" alt="Cumin Seeds">
+                    <img src="images/bayleaf.jpg" alt="bayleaf">
                     <h4>Bay leaf</h4>
-                    <a href="#" class="btn btn-dark">View Details</a>
+                    <a href="#" class="btn btn-dark" onclick="toggleDesc(this); return false;">View Details</a>
+                    <div class="product-desc" style="display: none;">
+                        <ul style="padding-left: 20px; margin-top: 5px; list-style-type: disc;">
+                            <li style="margin-bottom: 5px;">Premium aromatic leaf spice</li>
+                            <li style="margin-bottom: 5px;">Distinct earthy flavor with rich fragrance</li>
+                            <li style="margin-bottom: 5px;">Naturally harvested from high-quality bay trees</li>
+                            <li style="margin-bottom: 5px;">Enhances soups, curries, rice, and spice blends</li>
+                            <li style="margin-bottom: 5px;">100% pure, fresh, and chemical-free</li>
+                            <li style="margin-bottom: 5px;">Rich in essential oils and natural compounds</li>
+                            <li style="margin-bottom: 5px;">Supports digestion and wellness</li>
+                            <li style="margin-bottom: 5px;">Packed with antioxidants and medicinal benefits</li>
+                            <li style="margin-bottom: 5px;">Carefully dried to preserve aroma and flavor</li>
+                            <li style="margin-bottom: 5px;">Export-quality spice with global demand</li>
+                            <li style="margin-bottom: 5px;">Sustainably sourced from trusted farms</li>
+                            <li style="margin-bottom: 5px;">Essential ingredient for authentic culinary excellence</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="product-card">
-                    <img src="images/star_anise.jpg" alt="Red Chili">
+                    <img src="images/star_anise.jpg" alt="staranise">
                     <h4>Star Anise</h4>
-                    <a href="#" class="btn btn-dark">View Details</a>
+                    <a href="#" class="btn btn-dark" onclick="toggleDesc(this); return false;">View Details</a>
+                    <div class="product-desc" style="display: none;">
+                        <ul style="padding-left: 20px; margin-top: 5px; list-style-type: disc;">
+                            <li style="margin-bottom: 5px;">Premium star-shaped aromatic spice</li>
+                            <li style="margin-bottom: 5px;">Sweet, licorice-like flavor with rich fragrance</li>
+                            <li style="margin-bottom: 5px;">Naturally harvested from high-quality star anise trees</li>
+                            <li style="margin-bottom: 5px;">Ideal for curries, teas, desserts, and spice blends</li>
+                            <li style="margin-bottom: 5px;">100% pure, fresh, and chemical-free</li>
+                            <li style="margin-bottom: 5px;">Rich in essential oils and natural compounds</li>
+                            <li style="margin-bottom: 5px;">Supports digestion and wellness</li>
+                            <li style="margin-bottom: 5px;">Packed with antioxidants and medicinal properties</li>
+                            <li style="margin-bottom: 5px;">Carefully dried to preserve flavor and potency</li>
+                            <li style="margin-bottom: 5px;">Export-quality spice with high global value</li>
+                            <li style="margin-bottom: 5px;">Sustainably sourced from trusted plantations</li>
+                            <li style="margin-bottom: 5px;">Valued for culinary excellence and natural health benefits
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="view-all-container">
-                <a href="#" class="btn btn-outline">View All Products</a>
+            <div class="view-all-container" id="reset-view-btn" style="display: none; margin-top: 30px;">
+                <a href="#" class="btn btn-dark" onclick="resetProducts(); return false;">View All Products</a>
             </div>
         </div>
     </section>
@@ -175,6 +292,9 @@
     <section class="all-spices">
         <img src="images/anise.png" alt="" class="decor-anise">
         <img src="images/leaf-removebg-preview.png" alt="" class="decor-bay">
+        <img src="images/background-removed-background-removed.png" alt="" class="decor-new-bg">
+        <img src="images/background-removed-background-removed.png" alt="" class="decor-new-bg-bottom">
+        <img src="images/leaf-removebg-preview.png" alt="" class="decor-bay-bottom-right">
         <div class="container">
             <div class="section-header">
                 <span class="section-subtitle">OUR SPICES LIST</span>
@@ -253,15 +373,13 @@
         <div class="container">
             <div class="footer-col">
                 <div class="logo light">
-                    <i class="fa-solid fa-leaf logo-icon"></i>
                     <div class="logo-text">
-                        <h2>KAIRON</h2>
-                        <span>S P I C E S</span>
+                        <img src="images/kairon-logo-final.png" alt="">
                     </div>
                 </div>
                 <p>Kairon Spices is committed to providing the highest quality spices to customers around the world.</p>
             </div>
-            <div class="footer-col">
+            <div class="footer-col" id="link">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -308,6 +426,71 @@
         </div>
     </footer>
 
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        function toggleDesc(btn) {
+            const desc = btn.nextElementSibling;
+            const card = btn.closest('.product-card');
+            const grid = card.closest('.products-grid');
+
+            if (desc.style.display === 'none') {
+                desc.style.display = 'block';
+                btn.style.display = 'none'; // Hide the button
+
+                // Hide other cards and center this one
+                Array.from(grid.children).forEach(child => {
+                    if (child !== card) {
+                        child.style.display = 'none';
+                    }
+                });
+                grid.classList.add('single-view');
+                card.classList.add('active-card');
+
+                // Show the View All Products button and move it to the right section
+                const resetBtn = document.getElementById('reset-view-btn');
+                if (resetBtn) {
+                    resetBtn.style.display = 'block';
+                    resetBtn.style.textAlign = 'left';
+                    resetBtn.style.marginTop = '25px';
+                    desc.appendChild(resetBtn);
+                }
+
+                // Click card to close it
+                setTimeout(() => {
+                    card.onclick = function (e) {
+                        if (!e.target.closest('a')) {
+                            resetProducts();
+                            card.onclick = null;
+                        }
+                    };
+                }, 100);
+            }
+        }
+
+        function resetProducts() {
+            const grid = document.querySelector('.products-grid');
+            if (!grid) return;
+
+            grid.classList.remove('single-view');
+
+            Array.from(grid.children).forEach(child => {
+                child.style.display = '';
+                child.classList.remove('active-card');
+
+                const desc = child.querySelector('.product-desc');
+                const btn = child.querySelector('.btn-dark');
+                if (desc) desc.style.display = 'none';
+                if (btn) btn.style.display = ''; // Restore the button
+            });
+
+            // Hide the View All Products button
+            const resetBtn = document.getElementById('reset-view-btn');
+            if (resetBtn) resetBtn.style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
