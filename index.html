@@ -65,7 +65,22 @@
                         <li><a href="#">Curry Leaves</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Spices List</a></li>
+                <li class="dropdown">
+                    <a href="#" id="spices-mobile-toggle">Spices List <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Black Pepper</a></li>
+                        <li><a href="#">White Pepper</a></li>
+                        <li><a href="#">Green Cardamom</a></li>
+                        <li><a href="#">Black Cardamom</a></li>
+                        <li><a href="#">Cloves</a></li>
+                        <li><a href="#">Nutmeg</a></li>
+                        <li><a href="#">Mace</a></li>
+                        <li><a href="#">Cinnamon</a></li>
+                        <li><a href="#">Cumin Seeds</a></li>
+                        <li><a href="#">Fennel Seeds</a></li>
+                        <li><a href="#">Coriander Seeds</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Quality</a></li>
                 <li><a href="#" id="contact">Contact Us</a></li>
             </ul>
@@ -312,14 +327,14 @@
                 <div class="spice-item"><img src="images/black_cardamom.jpg" alt=""><span>Black Cardamom</span></div>
                 <div class="spice-item"><img src="images/clove.jpg" alt=""><span>Cloves</span></div>
                 <div class="spice-item"><img src="images/nutmeg.jpg" alt=""><span>Nutmeg</span></div>
-                <div class="spice-item"><img src="images/mace.jpg" alt=""><span>Mace</span></div>
-                <div class="spice-item"><img src="images/cinnamon.jpg" alt=""><span>Cinnamon</span></div>
-                <div class="spice-item"><img src="images/cumin.jpg" alt=""><span>Cumin Seeds</span></div>
-                <div class="spice-item"><img src="images/fennel.jpg" alt=""><span>Fennel Seeds</span></div>
-                <div class="spice-item"><img src="images/coriander.jpg" alt=""><span>Coriander Seeds</span></div>
+                <div class="spice-item hidden-spice" style="display: none;"><img src="images/mace.jpg" alt=""><span>Mace</span></div>
+                <div class="spice-item hidden-spice" style="display: none;"><img src="images/cinnamon.jpg" alt=""><span>Cinnamon</span></div>
+                <div class="spice-item hidden-spice" style="display: none;"><img src="images/cumin.jpg" alt=""><span>Cumin Seeds</span></div>
+                <div class="spice-item hidden-spice" style="display: none;"><img src="images/fennel.jpg" alt=""><span>Fennel Seeds</span></div>
+                <div class="spice-item hidden-spice" style="display: none;"><img src="images/coriander.jpg" alt=""><span>Coriander Seeds</span></div>
             </div>
             <div class="view-all-container" style="margin-top: 50px;">
-                <a href="#" class="btn btn-primary"
+                <a href="#" class="btn btn-primary" id="view-full-spices-btn" onclick="toggleSpices(this); return false;"
                     style="padding: 15px 35px; border-radius: 8px; font-weight: 600; font-size: 1.1rem;">View Full
                     Spices List <i class="fa-solid fa-leaf" style="margin-left: 8px;"></i></a>
             </div>
@@ -430,6 +445,17 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
+        // Mobile Dropdown Toggle
+        document.querySelectorAll('.nav-links .dropdown > a').forEach(toggle => {
+            toggle.addEventListener('click', function (e) {
+                if (window.innerWidth <= 360) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    parent.classList.toggle('active');
+                }
+            });
+        });
+
         function toggleDesc(btn) {
             const desc = btn.nextElementSibling;
             const card = btn.closest('.product-card');
@@ -488,6 +514,21 @@
             // Hide the View All Products button
             const resetBtn = document.getElementById('reset-view-btn');
             if (resetBtn) resetBtn.style.display = 'none';
+        }
+
+        function toggleSpices(btn) {
+            const hiddenSpices = document.querySelectorAll('.hidden-spice');
+            const isHidden = hiddenSpices[0].style.display === 'none';
+
+            hiddenSpices.forEach(spice => {
+                spice.style.display = isHidden ? 'flex' : 'none';
+            });
+
+            if (isHidden) {
+                btn.innerHTML = 'View Less Spices <i class="fa-solid fa-leaf" style="margin-left: 8px;"></i>';
+            } else {
+                btn.innerHTML = 'View Full Spices List <i class="fa-solid fa-leaf" style="margin-left: 8px;"></i>';
+            }
         }
     </script>
 </body>
