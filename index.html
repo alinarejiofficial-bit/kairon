@@ -81,7 +81,7 @@
                         <li><a href="#">Coriander Seeds</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Quality</a></li>
+                <li><a href="#why-choose-us" id="quality-mobile-toggle">Quality</a></li>
                 <li><a href="#" id="contact">Contact Us</a></li>
             </ul>
             <a href="#" class="btn btn-primary">Get A Quote</a>
@@ -342,7 +342,7 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
+    <section class="why-choose-us" id="why-choose-us">
         <div class="container">
             <div class="why-content">
                 <span class="section-subtitle">WHY CHOOSE US</span>
@@ -440,7 +440,56 @@
         </div>
     </footer>
 
+    <!-- About Modal -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Bringing Nature’s Finest Spices to Your Kitchen</h2>
+            <p class="modal-text">Kairon Spices is dedicated to delivering premium-quality, handpicked spices sourced from trusted farms. Our commitment is to preserve freshness, aroma, and authentic flavor in every product.</p>
+            
+            <div class="modal-section">
+                <h4>Highlights:</h4>
+                <ul class="modal-list">
+                    <li><i class="fa-solid fa-check"></i> Premium hand-selected spices</li>
+                    <li><i class="fa-solid fa-check"></i> Rich aroma and natural freshness</li>
+                    <li><i class="fa-solid fa-check"></i> Hygienically processed & packed</li>
+                    <li><i class="fa-solid fa-check"></i> Authentic taste for every kitchen</li>
+                    <li><i class="fa-solid fa-check"></i> Trusted quality from source to table</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h4>Mission:</h4>
+                <p>To provide pure, flavorful spices that enhance everyday cooking with excellence.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // About Modal Logic
+        const modal = document.getElementById("about-modal");
+        const btn = document.getElementById("about");
+        const span = document.getElementsByClassName("close-modal")[0];
+
+        if (btn && modal) {
+            btn.onclick = function(e) {
+                e.preventDefault();
+                modal.style.display = "block";
+            }
+        }
+
+        if (span && modal) {
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+        }
+
+        window.onclick = function(e) {
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
         document.getElementById('navToggle').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
         });
@@ -455,6 +504,23 @@
                 }
             });
         });
+        
+        // Quality Link Toggle
+        const qualityToggle = document.getElementById('quality-mobile-toggle');
+        if (qualityToggle) {
+            qualityToggle.addEventListener('click', function (e) {
+                const whyFeatures = document.querySelector('.why-features');
+                if (whyFeatures) {
+                    const isHidden = window.getComputedStyle(whyFeatures).display === 'none';
+                    if (isHidden) {
+                        e.preventDefault();
+                        whyFeatures.style.display = 'flex';
+                        // Optional: scroll to it
+                        document.getElementById('why-choose-us').scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }
 
         function toggleDesc(btn) {
             const desc = btn.nextElementSibling;
